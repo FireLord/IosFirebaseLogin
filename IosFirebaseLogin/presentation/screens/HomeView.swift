@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
         List {
             Section {
@@ -26,7 +28,7 @@ struct HomeView: View {
                             .fontWeight(.semibold)
                             .padding(.top, 4)
                         
-                        Text("test@gmail.com")
+                        Text(viewModel.currentUser?.email ?? "")
                             .font(.footnote)
                             .accentColor(.gray)
                     }

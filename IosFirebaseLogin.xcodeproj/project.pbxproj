@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		843AE74C2BA46BAD00EB2881 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 843AE74B2BA46BAD00EB2881 /* FirebaseFirestore */; };
+		843AE74F2BA46C6D00EB2881 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843AE74E2BA46C6D00EB2881 /* AuthViewModel.swift */; };
+		843AE7512BA46F7400EB2881 /* DashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843AE7502BA46F7400EB2881 /* DashView.swift */; };
 		8492B5D42BA45A9300129A19 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492B5D32BA45A9300129A19 /* InputView.swift */; };
 		8492B5D62BA4628900129A19 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492B5D52BA4628900129A19 /* HomeView.swift */; };
 		8492B5D82BA466E900129A19 /* SettingRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492B5D72BA466E900129A19 /* SettingRowView.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		843AE74E2BA46C6D00EB2881 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		843AE7502BA46F7400EB2881 /* DashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashView.swift; sourceTree = "<group>"; };
 		8492B5D32BA45A9300129A19 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		8492B5D52BA4628900129A19 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8492B5D72BA466E900129A19 /* SettingRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRowView.swift; sourceTree = "<group>"; };
@@ -59,6 +63,7 @@
 		8421632D2BA458C20091778F /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				843AE74D2BA46C6200EB2881 /* viewModel */,
 				8492B5D92BA468B100129A19 /* model */,
 				8492B5D22BA45A8000129A19 /* view */,
 				8421632E2BA458CB0091778F /* screens */,
@@ -74,8 +79,17 @@
 				84D25B2B2BA4575300CB044D /* ForgotPasswordView.swift */,
 				84D25B2D2BA4585C00CB044D /* SignupView.swift */,
 				8492B5D52BA4628900129A19 /* HomeView.swift */,
+				843AE7502BA46F7400EB2881 /* DashView.swift */,
 			);
 			path = screens;
+			sourceTree = "<group>";
+		};
+		843AE74D2BA46C6200EB2881 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				843AE74E2BA46C6D00EB2881 /* AuthViewModel.swift */,
+			);
+			path = viewModel;
 			sourceTree = "<group>";
 		};
 		8492B5D22BA45A8000129A19 /* view */ = {
@@ -212,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843AE7512BA46F7400EB2881 /* DashView.swift in Sources */,
 				84B0C0BB2BA445BC00109365 /* LoginView.swift in Sources */,
 				84D25B2C2BA4575300CB044D /* ForgotPasswordView.swift in Sources */,
 				8492B5D82BA466E900129A19 /* SettingRowView.swift in Sources */,
@@ -220,6 +235,7 @@
 				8492B5D62BA4628900129A19 /* HomeView.swift in Sources */,
 				84B0C0B92BA445BC00109365 /* IosFirebaseLoginApp.swift in Sources */,
 				84D25B2E2BA4585C00CB044D /* SignupView.swift in Sources */,
+				843AE74F2BA46C6D00EB2881 /* AuthViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +377,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -390,6 +407,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
