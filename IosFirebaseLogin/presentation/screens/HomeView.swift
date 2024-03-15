@@ -51,7 +51,9 @@ struct HomeView: View {
             
             Section("Account") {
                 Button {
-                    
+                    withAnimation(.easeOut) {
+                        viewModel.signOut()
+                    }
                 } label: {
                     SettingRowView(imageName: "arrow.left.circle.fill",
                                    title: "Sign out",
@@ -59,7 +61,7 @@ struct HomeView: View {
                 }
                 
                 Button {
-                    
+                    viewModel.deleteAccount()
                 } label: {
                     SettingRowView(imageName: "xmark.circle.fill",
                                    title: "Delete Account",
