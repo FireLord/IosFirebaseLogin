@@ -49,6 +49,8 @@ struct LoginView: View {
                 }
                 .background(.blue)
                 .cornerRadius(10)
+                .disabled(!formIsValid)
+                .opacity(formIsValid ? 1.0 : 0.5)
                 .padding()
                 
                 Button {
@@ -86,4 +88,13 @@ struct LoginView: View {
 
 #Preview {
     LoginView()
+}
+
+extension LoginView: AuthenticationFormProtocol {
+    var formIsValid: Bool {
+        return !email.isEmpty
+        && email.contains("@")
+        && !password.isEmpty
+        && password.count > 5
+    }
 }
