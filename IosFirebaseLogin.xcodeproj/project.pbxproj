@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8492B5D42BA45A9300129A19 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492B5D32BA45A9300129A19 /* InputView.swift */; };
+		8492B5D62BA4628900129A19 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492B5D52BA4628900129A19 /* HomeView.swift */; };
 		84B0C0B92BA445BC00109365 /* IosFirebaseLoginApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0C0B82BA445BC00109365 /* IosFirebaseLoginApp.swift */; };
 		84B0C0BB2BA445BC00109365 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0C0BA2BA445BC00109365 /* LoginView.swift */; };
 		84B0C0BD2BA445BD00109365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B0C0BC2BA445BD00109365 /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8492B5D32BA45A9300129A19 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		8492B5D52BA4628900129A19 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		84B0C0B52BA445BC00109365 /* IosFirebaseLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosFirebaseLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B0C0B82BA445BC00109365 /* IosFirebaseLoginApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosFirebaseLoginApp.swift; sourceTree = "<group>"; };
 		84B0C0BA2BA445BC00109365 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -49,6 +53,7 @@
 		8421632D2BA458C20091778F /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				8492B5D22BA45A8000129A19 /* view */,
 				8421632E2BA458CB0091778F /* screens */,
 				84B0C0B82BA445BC00109365 /* IosFirebaseLoginApp.swift */,
 			);
@@ -61,8 +66,17 @@
 				84B0C0BA2BA445BC00109365 /* LoginView.swift */,
 				84D25B2B2BA4575300CB044D /* ForgotPasswordView.swift */,
 				84D25B2D2BA4585C00CB044D /* SignupView.swift */,
+				8492B5D52BA4628900129A19 /* HomeView.swift */,
 			);
 			path = screens;
+			sourceTree = "<group>";
+		};
+		8492B5D22BA45A8000129A19 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				8492B5D32BA45A9300129A19 /* InputView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		84B0C0AC2BA445BC00109365 = {
@@ -183,6 +197,8 @@
 			files = (
 				84B0C0BB2BA445BC00109365 /* LoginView.swift in Sources */,
 				84D25B2C2BA4575300CB044D /* ForgotPasswordView.swift in Sources */,
+				8492B5D42BA45A9300129A19 /* InputView.swift in Sources */,
+				8492B5D62BA4628900129A19 /* HomeView.swift in Sources */,
 				84B0C0B92BA445BC00109365 /* IosFirebaseLoginApp.swift in Sources */,
 				84D25B2E2BA4585C00CB044D /* SignupView.swift in Sources */,
 			);
