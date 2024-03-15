@@ -9,7 +9,62 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            Section {
+                HStack {
+                    Text("MJ")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .frame(width: 72, height: 72)
+                        .background(.gray)
+                        .clipShape(Circle())
+                    
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Max Joshi")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .padding(.top, 4)
+                        
+                        Text("test@gmail.com")
+                            .font(.footnote)
+                            .accentColor(.gray)
+                    }
+                }
+            }
+            
+            Section("General") {
+                HStack {
+                    SettingRowView(imageName: "gear",
+                                   title: "Version",
+                                   tintColor: .gray)
+                    
+                    Spacer()
+                    
+                    Text("1.0.0")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
+            }
+            
+            Section("Account") {
+                Button {
+                    
+                } label: {
+                    SettingRowView(imageName: "arrow.left.circle.fill",
+                                   title: "Sign out",
+                                   tintColor: .red)
+                }
+                
+                Button {
+                    
+                } label: {
+                    SettingRowView(imageName: "xmark.circle.fill",
+                                   title: "Delete Account",
+                                   tintColor: .red)
+                }
+            }
+        }
     }
 }
 
