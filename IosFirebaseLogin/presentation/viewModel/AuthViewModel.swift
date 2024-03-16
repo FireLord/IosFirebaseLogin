@@ -86,8 +86,18 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func deleteAccount() {
-
+    func deleteAccount() async throws {
+        do {
+            guard let user = userSession else {
+                throw URLError(.cannotFindHost)
+            }
+            try await user.delete()
+            let uid = user.uid
+            try await Firestore.firestore().collection("user").document(uid).delete()
+            signOut()
+        } catch {
+            print("DEBUG: Failed to delete account with error \(error.localizedDescription)")
+        }
     }
     
     func fetchUser() async {
