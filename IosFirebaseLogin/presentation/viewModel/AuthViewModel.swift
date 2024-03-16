@@ -107,4 +107,12 @@ class AuthViewModel: ObservableObject {
         
         print("DEBUG: current user is \(String(describing: currentUser))")
     }
+    
+    func forgotPassword(withEmail email: String) async throws {
+        do {
+            try await Auth.auth().sendPasswordReset(withEmail: email)
+        } catch {
+            print("DEBUG: Failed with error \(error.localizedDescription)")
+        }
+    }
 }

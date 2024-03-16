@@ -34,6 +34,17 @@ struct LoginView: View {
                 }
                 .padding()
                 
+                NavigationLink {
+                    ForgoutPasswordView()
+                } label: {
+                    Text("Forgot Password?")
+                        .font(.callout)
+                        .fontWeight(.semibold)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                        .foregroundColor(.blue)
+                        .padding(.horizontal)
+                }
+                
                 Button {
                     Task {
                         try await viewModel.signIn(withEmail: email, password: password)
