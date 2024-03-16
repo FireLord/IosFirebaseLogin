@@ -25,6 +25,8 @@
 		84D25B282BA452F300CB044D /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 84D25B272BA452F300CB044D /* GoogleSignInSwift */; };
 		84D25B2C2BA4575300CB044D /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D25B2B2BA4575300CB044D /* ForgotPasswordView.swift */; };
 		84D25B2E2BA4585C00CB044D /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D25B2D2BA4585C00CB044D /* SignupView.swift */; };
+		B2ED71C02BA6292E009A4217 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B2ED71BF2BA6292E009A4217 /* GoogleSignIn */; };
+		B2ED71C42BA62BD7009A4217 /* TopViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ED71C32BA62BD7009A4217 /* TopViewUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		84D25B242BA4526A00CB044D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84D25B2B2BA4575300CB044D /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		84D25B2D2BA4585C00CB044D /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		B2ED71C12BA62A15009A4217 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B2ED71C32BA62BD7009A4217 /* TopViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 				84D25B232BA4518300CB044D /* FirebaseFirestoreSwift in Frameworks */,
 				843AE74C2BA46BAD00EB2881 /* FirebaseFirestore in Frameworks */,
 				84D25B282BA452F300CB044D /* GoogleSignInSwift in Frameworks */,
+				B2ED71C02BA6292E009A4217 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +68,7 @@
 		8421632D2BA458C20091778F /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				B2ED71C22BA62B68009A4217 /* util */,
 				843AE74D2BA46C6200EB2881 /* viewModel */,
 				8492B5D92BA468B100129A19 /* model */,
 				8492B5D22BA45A8000129A19 /* view */,
@@ -128,6 +134,7 @@
 		84B0C0B72BA445BC00109365 /* IosFirebaseLogin */ = {
 			isa = PBXGroup;
 			children = (
+				B2ED71C12BA62A15009A4217 /* Info.plist */,
 				8421632D2BA458C20091778F /* presentation */,
 				84D25B242BA4526A00CB044D /* GoogleService-Info.plist */,
 				84B0C0BC2BA445BD00109365 /* Assets.xcassets */,
@@ -142,6 +149,14 @@
 				84B0C0BF2BA445BD00109365 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B2ED71C22BA62B68009A4217 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				B2ED71C32BA62BD7009A4217 /* TopViewUtil.swift */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +181,7 @@
 				84D25B222BA4518300CB044D /* FirebaseFirestoreSwift */,
 				84D25B272BA452F300CB044D /* GoogleSignInSwift */,
 				843AE74B2BA46BAD00EB2881 /* FirebaseFirestore */,
+				B2ED71BF2BA6292E009A4217 /* GoogleSignIn */,
 			);
 			productName = IosFirebaseLogin;
 			productReference = 84B0C0B52BA445BC00109365 /* IosFirebaseLogin.app */;
@@ -234,6 +250,7 @@
 				8492B5DB2BA468C600129A19 /* User.swift in Sources */,
 				8492B5D62BA4628900129A19 /* HomeView.swift in Sources */,
 				84B0C0B92BA445BC00109365 /* IosFirebaseLoginApp.swift in Sources */,
+				B2ED71C42BA62BD7009A4217 /* TopViewUtil.swift in Sources */,
 				84D25B2E2BA4585C00CB044D /* SignupView.swift in Sources */,
 				843AE74F2BA46C6D00EB2881 /* AuthViewModel.swift in Sources */,
 			);
@@ -372,6 +389,7 @@
 				DEVELOPMENT_TEAM = JR75GG23WH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IosFirebaseLogin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -402,6 +420,7 @@
 				DEVELOPMENT_TEAM = JR75GG23WH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IosFirebaseLogin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -488,6 +507,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 84D25B262BA452F300CB044D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		B2ED71BF2BA6292E009A4217 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84D25B262BA452F300CB044D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

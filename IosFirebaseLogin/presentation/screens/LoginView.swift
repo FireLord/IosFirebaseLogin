@@ -54,7 +54,9 @@ struct LoginView: View {
                 .padding()
                 
                 Button {
-                    
+                    Task {
+                        try await viewModel.signInGoogle()
+                    }
                 } label: {
                     HStack {
                         Text("GOOGLE SIGNIN")

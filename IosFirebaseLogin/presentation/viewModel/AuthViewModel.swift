@@ -8,6 +8,8 @@
 import Foundation
 import Firebase
 import FirebaseFirestoreSwift
+import GoogleSignIn
+import GoogleSignInSwift
 
 protocol AuthenticationFormProtocol {
     var formIsValid: Bool { get }
@@ -41,6 +43,31 @@ class AuthViewModel: ObservableObject {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             userSession = result.user
             let user = User(id: result.user.uid, email: email)
+            let encodeUser = try Firestore.Encoder().encode(user)
+            try await Firestore.firestore().collection("user").document(user.id).setData(encodeUser)
+            await fetchUser()
+        } catch {
+            print("DEBUG: Failed with error \(error.localizedDescription)")
+        }
+    }
+    
+    func signInGoogle() async throws {
+        do {
+            guard let topVC = TopViewUtil.shared.topViewController() else {
+                throw URLError(.cannotFindHost)
+            }
+
+            let googleResult = try await GIDSignIn.sharedInstance.signIn(withPresenting: topVC)
+            
+            guard let idToken = googleResult.user.idToken?.tokenString else {
+                throw URLError(.cannotFindHost)
+            }
+            
+            let accessToken = googleResult.user.accessToken.tokenString
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+            let result = try await Auth.auth().signIn(with: credential)
+            userSession = result.user
+            let user = User(id: result.user.uid, email: result.user.email!)
             let encodeUser = try Firestore.Encoder().encode(user)
             try await Firestore.firestore().collection("user").document(user.id).setData(encodeUser)
             await fetchUser()
