@@ -7,6 +7,9 @@
 
 import SwiftUI
 import Firebase
+import FirebaseAnalytics
+import FirebaseAnalyticsSwift
+import FirebaseCore
 
 @main
 struct IosFirebaseLoginApp: App {
@@ -19,6 +22,11 @@ struct IosFirebaseLoginApp: App {
     var body: some Scene {
         WindowGroup {
             DashView().environmentObject(viewModel)
+                .onAppear() {
+                    Analytics.logEvent(AnalyticsEventScreenView,
+                                       parameters: [AnalyticsParameterScreenName: "\(IosFirebaseLoginApp.self)",
+                                                   AnalyticsParameterScreenClass: "\(IosFirebaseLoginApp.self)"])
+                }
         }
     }
 }
